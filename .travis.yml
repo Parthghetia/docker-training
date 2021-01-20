@@ -9,3 +9,5 @@ before_install:
 script:
   - docker run -e CI=true parthghetia/docker-training npm run test
 
+deploy: 
+  
