@@ -1,0 +1,10 @@
+sudo: required
+services: 
+  - docker
+
+before-install:
+  - docker build -t parthghetia/docker-training -f Dockerfile.dev .
+
+script:
+  - docker run parthghetia/docker-training npm run test -- --coverage
+
