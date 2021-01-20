@@ -1,10 +1,11 @@
+language: generic
 sudo: required
 services: 
   - docker
 
-before-install:
+before_install:
   - docker build -t parthghetia/docker-training -f Dockerfile.dev .
 
 script:
-  - docker run parthghetia/docker-training npm run test -- --coverage
+  - docker run -e CI=true parthghetia/docker-training npm run test
 
